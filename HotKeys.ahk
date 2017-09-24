@@ -5,9 +5,9 @@
 ;	3) Ctrl+Numpad0 sends volume-mute.
 ;  The following only apply inside the Minecraft window:
 ;	1) Mouse Button 4 toggles hold-left-click, most useful for minig large amounts of blocks.
-;	2) Mouse Button 5 toggles hold-W, making you move forward automatically.
-;	3) Numpad Decimal toggle hold-right-click, most useful for AKF fishing.
-;	4) LShift toggles crouching upon double-pressing it. Press it again (once) to turn off.
+;	2) Double-press W toggles hold-W, making you move forward automatically. Press it again (once) to turn off.
+;	3) Numpad Decimal toggles hold-right-click, most useful for AKF fishing.
+;	4) Double-press LShift toggles crouching. Press it again (once) to turn off.
 ;
 
 #NoEnv
@@ -35,7 +35,7 @@ SetWorkingDir %A_ScriptDir%
 		lasttime:=a_tickCount
 	Return
 	
-	; crouch-toggle on quick double-tap of W key
+	; walk-toggle on quick double-tap of W key
 	~W up::
 		If (a_tickCount-lasttime < 300)
 		{
