@@ -1,4 +1,4 @@
-
+;
 ; Script Function:
 ;  The following only apply inside the Minecraft window:
 ;	1) Mouse Button 4 toggles hold-left-click, most useful for minig large amounts of blocks.
