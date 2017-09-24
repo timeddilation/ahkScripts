@@ -32,10 +32,6 @@ SetWorkingDir %A_ScriptDir%
 		If (a_tickCount-lasttime < 300)
 		{
 			Send, {LShift down}
-			If GetKeyState("LShift", "P")
-				Send, {LShift up}
-;			else If GetKeyState("LControl", "D")
-;				Send, {LShift up}
 		}
 		lasttime:=a_tickCount
 	Return
@@ -45,8 +41,6 @@ SetWorkingDir %A_ScriptDir%
 		If (a_tickCount-lasttime < 300)
 		{
 			Send, {W down}
-			If GetKeyState("W", "P")
-				Send, {W up}
 		}
 		lasttime:=a_tickCount
 	Return
