@@ -8,6 +8,7 @@
 ;	2) Double-press W toggles hold-W, making you move forward automatically. Press it again (once) to turn off.
 ;	3) Numpad Decimal toggles hold-right-click, most useful for AKF fishing.
 ;	4) Double-press LShift toggles crouching. Press it again (once) to turn off.
+;	5) LCtrl will release ^crouch^ if it is toggled.
 ;
 
 #NoEnv
@@ -25,6 +26,15 @@ SetWorkingDir %A_ScriptDir%
 	; triggers for hold-left-click, hold-right-click
 	XButton1::Send % "{LButton " ((Cnt := !Cnt) ? "Down}" : "Up}" )
 	NumpadDot::Send % "{RButton " ((Cnt := !Cnt) ? "Down}" : "Up}" )
+	
+	; walk-toggle on quick double-tap of W key
+	~W up::
+		If (a_tickCount-lastTimeW < 300)
+		{
+			Send, {W down}
+		}
+		lastTimeW:=a_tickCount
+	Return
 	
 	; crouch-toggle on quick double-tap of LShift key
 	~LShift up::
@@ -44,14 +54,5 @@ SetWorkingDir %A_ScriptDir%
 			crouchToggled:=false
 		Return
 	}	
-	
-	; walk-toggle on quick double-tap of W key
-	~W up::
-		If (a_tickCount-lastTimeW < 300)
-		{
-			Send, {W down}
-		}
-		lastTimeW:=a_tickCount
-	Return
 	
 }
