@@ -31,9 +31,19 @@ SetWorkingDir %A_ScriptDir%
 		If (a_tickCount-lastTimeLShift < 300)
 		{
 			Send, {LShift down}
+			crouchToggled:=true
 		}
 		lastTimeLShift:=a_tickCount
 	Return
+	
+	; if crouch is toggled, when LCtrl is pressed it will also un-toggle crouch
+	If (crouchToggled)
+	{
+		~LControl::
+			Send, {LShift down}{LShift up} ; simulates pressing the LShift key to reset its double-tap timer
+			crouchToggled:=false
+		Return
+	}	
 	
 	; walk-toggle on quick double-tap of W key
 	~W up::
