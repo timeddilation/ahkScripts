@@ -28,20 +28,20 @@ SetWorkingDir %A_ScriptDir%
 	
 	; crouch-toggle on quick double-tap of LShift key
 	~LShift up::
-		If (a_tickCount-lasttime < 300)
+		If (a_tickCount-lastTimeLShift < 300)
 		{
 			Send, {LShift down}
 		}
-		lasttime:=a_tickCount
+		lastTimeLShift:=a_tickCount
 	Return
 	
 	; walk-toggle on quick double-tap of W key
 	~W up::
-		If (a_tickCount-lasttime < 300)
+		If (a_tickCount-lastTimeW < 300)
 		{
 			Send, {W down}
 		}
-		lasttime:=a_tickCount
+		lastTimeW:=a_tickCount
 	Return
 	
 }
