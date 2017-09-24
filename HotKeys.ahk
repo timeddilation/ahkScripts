@@ -22,7 +22,7 @@ SetWorkingDir %A_ScriptDir%
 
 #IfWinActive, Minecraft
 {
-	; triggers for hold-left-click, hold-W, hold-right-click
+	; triggers for hold-left-click, hold-right-click
 	XButton1::Send % "{LButton " ((Cnt := !Cnt) ? "Down}" : "Up}" )
 	NumpadDot::Send % "{RButton " ((Cnt := !Cnt) ? "Down}" : "Up}" )
 	
