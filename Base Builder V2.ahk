@@ -12,58 +12,58 @@ sleep 3000
 {
 send {1}
 loop 29
-{
-send {shift down}
-SetKeyDelay, 30, 800
-click right
-sleep 50
-click right
-sleep 50
-send {w}
-sleep 100
-}
+	{
+	send {shift down}
+	SetKeyDelay, 30, 800
+	click right
+	sleep 50
+	click right
+	sleep 50
+	send {w}
+	sleep 100
+	}
 send {shift down}
 MouseMove, -26, 0, 11, R
 send {2}
 loop 30
-{
-send {shift down}
-SetKeyDelay, 30, 800
-click right
-sleep 50
-click right
-sleep 50
-send {w}
-sleep 100
-}
+	{
+	send {shift down}
+	SetKeyDelay, 30, 800
+	click right
+	sleep 50
+	click right
+	sleep 50
+	send {w}
+	sleep 100
+	}
 send {shift down}
 MouseMove, -26, 0, 11, R
 send {3}
 loop 30
-{
-send {shift down}
-SetKeyDelay, 30, 800
-click right
-sleep 50
-click right
-sleep 50
-send {w}
-sleep 100
-}
+	{
+	send {shift down}
+	SetKeyDelay, 30, 800
+	click right
+	sleep 50
+	click right
+	sleep 50
+	send {w}
+	sleep 100
+	}
 send {shift down}
 MouseMove, -26, 0, 11, R
 send {4}
 loop 30
-{
-send {shift down}
-SetKeyDelay, 30, 800
-click right
-sleep 50
-click right
-sleep 50
-send {w}
-sleep 100
-}
+	{
+	send {shift down}
+	SetKeyDelay, 30, 800
+	click right
+	sleep 50
+	click right
+	sleep 50
+	send {w}
+	sleep 100
+	}
 send {shift down}
 MouseMove, -26, 0, 11, R
 MouseMove,  0, 0, 10, R
