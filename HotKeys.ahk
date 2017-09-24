@@ -24,7 +24,6 @@ SetWorkingDir %A_ScriptDir%
 {
 	; triggers for hold-left-click, hold-W, hold-right-click
 	XButton1::Send % "{LButton " ((Cnt := !Cnt) ? "Down}" : "Up}" )
-;	XButton2::Send % "{w " ((Cnt2 := !Cnt2) ? "Down}" : "Up}" )
 	NumpadDot::Send % "{RButton " ((Cnt := !Cnt) ? "Down}" : "Up}" )
 	
 	; crouch-toggle on quick double-tap of LShift key
