@@ -6,9 +6,8 @@
 ;  The following only apply inside the Minecraft window:
 ;	1) Mouse Button 4 toggles hold-left-click, most useful for minig large amounts of blocks.
 ;	2) Mouse Button 5 toggles hold-right-click, most useful for AKF fishing.
-;	3) Double-press W toggles hold-W, making you move forward automatically. Press it again (once) to turn off.
-;	4) Double-press LShift toggles crouching. Press it again (once) to turn off.
-;	5) LCtrl will release ^crouch^ if it is toggled.
+;	3) Double-press W toggles hold-W, making you move forward automatically. Press it again (once) to turn off, or by pressing S.
+;	4) Double-press LShift toggles crouching. Press it again (once) to turn off, or press LCtrl to sprint.
 ;
 
 #NoEnv
@@ -33,12 +32,23 @@ lastTimeLShift:=a_tickCount
 	
 	; walk-toggle on quick double-tap of W key
 	~W up::
+		walkToggled:=false
 		If (a_tickCount-lastTimeW < 300)
 		{
 			Send, {W down}
+			walkToggled:=true
 		}
 		lastTimeW:=a_tickCount
 	Return
+	
+	; if walk is toggled, when S is pressed it will also un-toggle walk
+	If (walkToggled)
+	{
+		~S::
+			Send, {W down}{W up} ; simulates pressing the W key to reset its double-tap timer
+			walkToggled:=false
+		Return
+	}
 	
 	; crouch-toggle on quick double-tap of LShift key
 	~LShift up::
