@@ -42,9 +42,10 @@ lastTimeLShift:=a_tickCount
 	
 	; crouch-toggle on quick double-tap of LShift key
 	~LShift up::
+		crouchToggled:=false
 		If (a_tickCount-lastTimeLShift < 300)
 		{
-			Send, {LShift down}
+			Send, {LShift DownTemp}
 			crouchToggled:=true
 		}
 		lastTimeLShift:=a_tickCount
