@@ -12,6 +12,10 @@
 SendMode Input
 SetWorkingDir %A_ScriptDir%
 
+; set params used in Minecraft window so they do not trigger on first script run
+lastTimeW:=a_tickCount
+lastTimeLShift:=a_tickCount
+
 #IfWinActive, Minecraft
 {
 	; triggers for hold-left-click, hold-right-click

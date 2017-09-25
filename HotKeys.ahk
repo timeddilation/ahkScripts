@@ -15,6 +15,10 @@
 SendMode Input
 SetWorkingDir %A_ScriptDir%
 
+; set params used in Minecraft window so they do not trigger on first script run
+lastTimeW:=a_tickCount
+lastTimeLShift:=a_tickCount
+
 ; general hotkeys for desktop, present everywhere.
 ^Up::Send {Volume_Up 2}
 ^Down::Send {Volume_Down 2}
