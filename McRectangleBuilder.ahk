@@ -1,7 +1,12 @@
 /*
 To start, center your cursor on the center of the block you want to begin the strucutre on.
+Make sure you are holding the block you want to build with
 Open F3 debug menu, check your "Facing" coordinents.
 Be on, or very close to one of the 90 degree points (0, 90, 180, -90) facing the direction of the first wall.
+
+Between every placed block, the script sends a middle-click input.
+This allows the character to always have the building material in-hand when the stack runs out.
+If your held stack runs out, as long as you have the building material in your inventory, it will be placed back in-hand.
 
 Make sure you have enough building material to complete the structure
 Define the structure's length, width and height in the first 3 parameters
