@@ -11,6 +11,7 @@ If your held stack runs out, as long as you have the building material in your i
 
 Make sure you have enough building material to complete the structure
 Define the structure's length, width and height in the first 3 parameters
+Currently, height must be an even number, it will round down odd numbers after dividing by 2
 */
 
 Length:=5
