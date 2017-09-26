@@ -16,9 +16,11 @@ Define the structure's length, width and height in the first 3 parameters
 Currently, height must be an even number, it will round down odd numbers after dividing by 2
 */
 
-Length:=11
-Width:=15
-Height:=6
+Length:=5
+Width:=5
+Height:=4
+
+MoveMousePixels:=86 ; you may need to change this to turn 90 degrees
 
 heightLoop:=Height // 2 ; two layers per loop
 BuildLength:=Length - 1
@@ -64,7 +66,7 @@ loop, %heightLoop%
 			send {MButton}{w}
 			sleep 10		
 		}
-	MouseMove, X+86, Y R
+	MouseMove, X+MoveMousePixels, Y R
 	loop, %BuildWidth%
 		{
 			send {Rbutton}
@@ -74,7 +76,7 @@ loop, %heightLoop%
 			send {MButton}{w}
 			sleep 10			
 		}
-	MouseMove, X+86, Y R
+	MouseMove, X+MoveMousePixels, Y R
 	loop, %BuildLength%
 		{
 			send {Rbutton}
@@ -84,7 +86,7 @@ loop, %heightLoop%
 			send {MButton}{w}
 			sleep 10			
 		}
-	MouseMove, X+86, Y R
+	MouseMove, X+MoveMousePixels, Y R
 	loop, %BuildWidth%
 		{
 			send {Rbutton}
@@ -96,7 +98,7 @@ loop, %heightLoop%
 		}
 	If (HeightCounter>0)
 		{
-		MouseMove, X+86, Y R
+		MouseMove, X+MoveMousePixels, Y R
 		SetKeyDelay, 30, 400
 			send {RButton down}{space}
 		sleep 100
