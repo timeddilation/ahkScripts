@@ -16,9 +16,9 @@ Height:=Height - 2 ; assumes height is minimum of 2
 
 MouseGetPos X, Y ; X , Y will be the "zero" position
 sleep 500
-SetKeyDelay, 30, 800
 loop, %heightLoop%
 {
+	SetKeyDelay, 30, 800
 	send {LShift down}{MButton}
 	loop, %Length%
 		{		
@@ -66,15 +66,15 @@ loop, %heightLoop%
 	If (Height>0)
 		{
 		MouseMove, X+86, Y R
-		send {space}
-		sleep 25
-		send {MButton}{Rbutton}
+		SetKeyDelay, 30, 400
+			send {RButton down}{space}
 		sleep 100
-		send {space}
-		sleep 25
-		send {MButton}{Rbutton}
+		SetKeyDelay,0
+			send {MButton}
+		SetKeyDelay, 30, 400
+			send {space}
 		sleep 100
-		Height:=Height - 2
+		Height:=Height-2
 		}
 	
 }
