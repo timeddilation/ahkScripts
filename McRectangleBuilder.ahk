@@ -19,7 +19,7 @@ Width:=5
 Height:=4
 
 ^o::
-heightLoop:=Floor(Height / 2) ; two layers per loop
+heightLoop:=Height // 2 ; two layers per loop
 Length:=Length - 1
 Width:=Width - 1
 Height:=Height - 2 ; assumes height is minimum of 2
