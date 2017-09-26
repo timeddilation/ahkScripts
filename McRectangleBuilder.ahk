@@ -28,7 +28,7 @@ BuildWidth:=Width - 1
 	Widths:=(Width * 2)
 	Overlapped:=(Lengths + Widths)
 	Trimmed:=(Overlapped - 4)
-	BlocksNeeded:=(Overlapped * ActualHeight)
+	BlocksNeeded:=(Trimmed * ActualHeight)
 	msgbox,  You need %BlocksNeeded% blocks.
 Return
 
