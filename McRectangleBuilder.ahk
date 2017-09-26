@@ -15,11 +15,12 @@ Make sure you have enough building material to complete the structure
 Define the structure's length, width and height in the first 3 parameters
 Currently, height must be an even number, it will round down odd numbers after dividing by 2
 */
-
+; Declare your rectangle
 Length:=5
 Width:=5
 Height:=4
 
+; Set this to negative value for left turns, positive value for right turns
 MoveMousePixels:=86 ; you may need to change this to turn 90 degrees
 
 heightLoop:=Height // 2 ; two layers per loop
@@ -49,8 +50,8 @@ sleep 50
 		send {space}
 	sleep 100
 	}
-	
 HeightCounter:=(Height - 2)
+
 MouseGetPos X, Y ; X , Y will be the "zero" position
 sleep 500
 loop, %heightLoop%
@@ -96,6 +97,10 @@ loop, %heightLoop%
 			send {MButton}{w}
 			sleep 10			
 		}
+	If (HeightCounter=0)
+		{
+		send {LShift up}
+		}
 	If (HeightCounter>0)
 		{
 		MouseMove, X+MoveMousePixels, Y R
@@ -108,10 +113,6 @@ loop, %heightLoop%
 			send {space}
 		sleep 100
 		HeightCounter:=HeightCounter-2
-		}
-	If (HeightCounter=0)
-		{
-		send {LShift up}
 		}
 	
 }
