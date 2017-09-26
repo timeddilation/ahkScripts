@@ -18,12 +18,11 @@ Length:=5
 Width:=5
 Height:=4
 
-^o::
 heightLoop:=Height // 2 ; two layers per loop
-Length:=Length - 1
-Width:=Width - 1
-Height:=Height - 2 ; assumes height is minimum of 2
+BuildLength:=Length - 1
+BuildWidth:=Width - 1
 
+^o::
 sleep 50
 	{ ; make first pillar
 	SetKeyDelay, 30, 400
@@ -35,14 +34,15 @@ sleep 50
 		send {space}
 	sleep 100
 	}
-
+	
+HeightCounter:=(Height - 2)
 MouseGetPos X, Y ; X , Y will be the "zero" position
 sleep 500
 loop, %heightLoop%
 {
 	SetKeyDelay, 30, 800
 	send {LShift down}{MButton}
-	loop, %Length%
+	loop, %BuildLength%
 		{		
 			send {Rbutton}
 			sleep 50
@@ -52,7 +52,7 @@ loop, %heightLoop%
 			sleep 10		
 		}
 	MouseMove, X+86, Y R
-	loop, %Width%
+	loop, %BuildWidth%
 		{
 			send {Rbutton}
 			sleep 50
@@ -62,7 +62,7 @@ loop, %heightLoop%
 			sleep 10			
 		}
 	MouseMove, X+86, Y R
-	loop, %Length%
+	loop, %BuildLength%
 		{
 			send {Rbutton}
 			sleep 50
@@ -72,7 +72,7 @@ loop, %heightLoop%
 			sleep 10			
 		}
 	MouseMove, X+86, Y R
-	loop, %Width%
+	loop, %BuildWidth%
 		{
 			send {Rbutton}
 			sleep 50
@@ -81,7 +81,7 @@ loop, %heightLoop%
 			send {MButton}{w}
 			sleep 10			
 		}
-	If (Height>0)
+	If (HeightCounter>0)
 		{
 		MouseMove, X+86, Y R
 		SetKeyDelay, 30, 400
@@ -92,9 +92,9 @@ loop, %heightLoop%
 		SetKeyDelay, 30, 400
 			send {space}
 		sleep 100
-		Height:=Height-2
+		HeightCounter:=HeightCounter-2
 		}
-	If (Height=0)
+	If (HeightCounter=0)
 		{
 		send {LShift up}
 		}
