@@ -1,4 +1,6 @@
 /*
+Author: timedilation [2017-09-25]
+
 To start, center your cursor on the center of the block you want to begin the strucutre on.
 Make sure you are holding the block you want to build with
 Open F3 debug menu, check your "Facing" coordinents.
