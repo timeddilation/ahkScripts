@@ -1,7 +1,10 @@
 /*
-To start, you must build a 2-block-high tower with the material ou want to build with
+To start, center your cursor on the center of the block you want to begin the strucutre on.
+Open F3 debug menu, check your "Facing" coordinents.
+Be on, or very close to one of the 90 degree points (0, 90, 180, -90) facing the direction of the first wall.
+
 Make sure you have enough building material to complete the structure
-Define the structure length, width and height in the first 3 parameters
+Define the structure's length, width and height in the first 3 parameters
 */
 
 Length:=5
@@ -13,6 +16,18 @@ heightLoop:=Height / 2 ; two layers per loop
 Length:=Length - 1
 Width:=Width - 1
 Height:=Height - 2 ; assumes height is minimum of 2
+
+sleep 50
+	{ ; make first pillar
+	SetKeyDelay, 30, 400
+		send {RButton down}{space}
+	sleep 100
+	SetKeyDelay,0
+		send {MButton}
+	SetKeyDelay, 30, 400
+		send {space}
+	sleep 100
+	}
 
 MouseGetPos X, Y ; X , Y will be the "zero" position
 sleep 500
