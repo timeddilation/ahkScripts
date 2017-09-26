@@ -19,10 +19,22 @@ lastTimeW:=a_tickCount
 lastTimeLShift:=a_tickCount
 
 ; general hotkeys for desktop, present everywhere.
+::i::I ; because for some reason I tend to drop the shift key when typing
 ^Up::Send {Volume_Up 2}
 ^Down::Send {Volume_Down 2}
 ^Numpad0::Send {Volume_Mute}
-::i::I
+^Left::
+	IfWinExist, ahk_class iTunes
+	ControlSend, ahk_parent, ^{Left}  ; < previous
+Return
+^Right::
+	IfWinExist, ahk_class iTunes
+	ControlSend, ahk_parent, ^{Right}  ; > next
+Return
+^F9::
+	IfWinExist, ahk_class iTunes
+	ControlSend, ahk_parent, {Space}  ; play/pause toggle
+Return
 
 #IfWinActive, Minecraft
 {
