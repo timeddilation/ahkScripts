@@ -2,7 +2,8 @@
 To start, center your cursor on the center of the block you want to begin the strucutre on.
 Make sure you are holding the block you want to build with
 Open F3 debug menu, check your "Facing" coordinents.
-Be on, or very close to one of the 90 degree points (0, 90, 180, -90) facing the direction of the first wall.
+Be on, or very close to one of the X-axis cardinal points (0, 90, 180, -90) facing the direction of the first wall.
+Be sure to also face exactly down (90.0 on Y-axis)
 
 Between every placed block, the script sends a middle-click input.
 This allows the character to always have the building material in-hand when the stack runs out.
