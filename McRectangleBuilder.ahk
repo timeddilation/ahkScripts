@@ -81,10 +81,6 @@ loop, %heightLoop%
 			send {MButton}{w}
 			sleep 10			
 		}
-	If (Height=0)
-		{
-		send {LShift up}
-		}
 	If (Height>0)
 		{
 		MouseMove, X+86, Y R
@@ -97,6 +93,10 @@ loop, %heightLoop%
 			send {space}
 		sleep 100
 		Height:=Height-2
+		}
+	If (Height=0)
+		{
+		send {LShift up}
 		}
 	
 }
