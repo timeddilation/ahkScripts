@@ -22,7 +22,17 @@ heightLoop:=Height // 2 ; two layers per loop
 BuildLength:=Length - 1
 BuildWidth:=Width - 1
 
-^o::
+^Numpad1:: ; Tells you how many blocks you need
+	ActualHeight:=(heightLoop * 2)
+	Lengths:=(Length * 2)
+	Widths:=(Width * 2)
+	Overlapped:=(Lengths + Widths)
+	Trimmed:=(Overlapped - 4)
+	BlocksNeeded:=(Overlapped * ActualHeight)
+	msgbox,  You need %BlocksNeeded% blocks.
+Return
+
+^Numpad2:: ; Begins building
 sleep 50
 	{ ; make first pillar
 	SetKeyDelay, 30, 400
@@ -100,5 +110,6 @@ loop, %heightLoop%
 		}
 	
 }
+Return
 
 ;!z::ExitApp
