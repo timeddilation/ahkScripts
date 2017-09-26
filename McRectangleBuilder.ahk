@@ -16,9 +16,9 @@ Define the structure's length, width and height in the first 3 parameters
 Currently, height must be an even number, it will round down odd numbers after dividing by 2
 */
 
-Length:=5
-Width:=5
-Height:=4
+Length:=11
+Width:=15
+Height:=6
 
 heightLoop:=Height // 2 ; two layers per loop
 BuildLength:=Length - 1
@@ -31,7 +31,8 @@ BuildWidth:=Width - 1
 	Overlapped:=(Lengths + Widths)
 	Trimmed:=(Overlapped - 4)
 	BlocksNeeded:=(Trimmed * ActualHeight)
-	msgbox,  You need %BlocksNeeded% blocks.
+	StacskNeeded:=(BlocksNeeded / 64)
+	msgbox,  You need %BlocksNeeded% blocks, or %StacskNeeded% stacks
 Return
 
 ^Numpad2:: ; Begins building
